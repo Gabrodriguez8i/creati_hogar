@@ -6,7 +6,7 @@
         <!-- list Items -->
         <div class="hero_slider">
 
-            <div v-for="(service,indexSlider) in services" :key="indexSlider" class="item" :class="{'active': indexSlider == 0}">
+            <div v-for="(service,indexSlider) in services" :key="indexSlider" class="item" :class="{ 'active': indexSlider == itemActive }">
                 <img :src="service.mainImage">
                 <div class="content">
                     <p>{{ service.address.city }} {{ service.address.state }} </p>
@@ -20,13 +20,13 @@
         <!-- button arrows -->
             <div class="arrows">
                 
-                <button id="prev" class="arrows_btn"> 
+                <button @click="prev" id="prev" class="arrows_btn"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-left" size="15px"  />
                     </ClientOnly>
                 </button>
     
-                <button id="next" class="arrows_btn"> 
+                <button @click="next" id="next" class="arrows_btn"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-right" size="15px"  />
                     </ClientOnly>
@@ -35,7 +35,7 @@
             </div>
         <!-- thumbnail -->
         <div class="thumbnail">
-            <div v-for="(thumbnail,indexThumbnail) in services" class="item" :class="{'active': indexThumbnail == 0}">
+            <div v-for="(thumbnail,indexThumbnail) in services" @click="itemActive = indexThumbnail" class="item" :class="{'active': indexThumbnail == itemActive}">
                 <img :src="thumbnail.mainImage">
                 <div class="content">
                     {{ thumbnail.name }}
@@ -46,20 +46,34 @@
 </template>
 
 <script setup>
-
 import {services} from '@/json/dataBannerSlider.json';
 
-console.log("services: ", services);
-onMounted(() => {
-    useHead({
-      script:[
-        {
-          src: "/jsDOM/BannerHero.js",
-          async: true
-        }
-      ]
-    })
+let itemActive = ref(0);
+
+const next = ()=>{
+    itemActive.value == services.length - 1 ? itemActive.value = 0 : itemActive.value += 1;
+}
+
+const prev = ()=>{
+    itemActive.value <= 0 ? itemActive.value = services.length - 1  : itemActive.value -= 1;
+}
+
+onMounted(()=>{
+    setInterval(()=>{
+        next();
+    },10000)
 })
+
+// onMounted(() => {
+//     useHead({
+//       script:[
+//         {
+//           src: "/jsDOM/BannerHero.js",
+//           async: true
+//         }
+//       ]
+//     })
+// })
 
 </script>
 
