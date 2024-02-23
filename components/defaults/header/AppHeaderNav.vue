@@ -31,16 +31,16 @@
 const {data} = await useFetch('/api/categories');
 
 // ejecutar js que maneje el DOOM
-onMounted(() => {
-  useHead({
-    script:[
-      {
-        src: "/jsDOM/tabMenuHeader.js",
-        async: true
-      }
-    ]
-  })
-})
+// onMounted(() => {
+//   useHead({
+//     script:[
+//       {
+//         src: "/jsDOM/tabMenuHeader.js",
+//         async: true
+//       }
+//     ]
+//   })
+// })
 
 
 onMounted(()=>{

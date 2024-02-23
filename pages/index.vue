@@ -2,7 +2,7 @@
   <div>
     <HomeBannerHero/> 
   
-      <section class="  services">
+      <section class="services">
         <!-- filter bx -->
         <div class="filterBx">
           <!-- filter bx BTN  -->
@@ -49,102 +49,11 @@
   
         </div>
   
-        <div v-if="servicesData?.length > 0" class="grid-container grid-4-colmns gap-sm">
-          <NuxtLink v-for="(property,index) in servicesData" class="let" :to="`property/${property.id}`">
-            <div
-                  :id="'carouselExampleIndicators' + index"
-                  class="carousel slide"
-                >
-                  <div class="carousel-indicators">
-                    <button
-                      type="button"
-                      :data-bs-target="'#carouselExampleIndicators' + index"
-                      data-bs-slide-to="0"
-                      class="active"
-                      aria-current="true"
-                      aria-label="Slide 1"
-                    ></button>
-                    <button
-                      type="button"
-                      :data-bs-target="'#carouselExampleIndicators' + index"
-                      data-bs-slide-to="1"
-                      aria-label="Slide 2"
-                    ></button>
-                    <button
-                      type="button"
-                      :data-bs-target="'#carouselExampleIndicators' + index"
-                      data-bs-slide-to="2"
-                      aria-label="Slide 3"
-                    ></button>
-                  </div>
-                  <div class="carousel-inner">
-    
-                    <div v-for="(image, index) in property.imagesSlider" class="carousel-item" :class="{'active': index == 0}">
-                      <img
-                        :src="image"
-                        class="d-block w-100"
-                        alt="..."
-                      />
-                    </div>
-    
-                  </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    :data-bs-target="'#carouselExampleIndicators' + index"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    :data-bs-target="'#carouselExampleIndicators' + index"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-            </div>
-            <div class="let-price-details">
-                  <h2 class="let-title nav-link-1 font-bold street">
-                    {{ property.address.city }}, {{ property.address.state  }}
-                  </h2>
-                  <span class="let-title-principal">{{ property.name }}</span>
-                  <div class="let-titile-footer">
-                    <span>
-                      <ClientOnly>
-    
-                        <Icon name="tabler:bed" size="18px" />
-                      </ClientOnly>
-                      {{ property.bedrooms }}
-                    </span>
-    
-                    <span>
-                      <ClientOnly>
-                        <Icon name="streamline:travel-hotel-shower-head-bathe-bath-bathroom-shower-water-head" size="18px" />
-                      </ClientOnly>
-                      {{ property.bathrooms }}
-                    </span>
-    
-                    <span>
-                      <ClientOnly>
-                        <Icon name="ic:round-people" size="18px" />
-                      </ClientOnly>
-                      {{ property.occupancy }}
-                    </span>
-    
-                  </div>
-                  <!-- <span class="price"><strong> $1,965</strong> night</span> -->
-            </div>
-          </NuxtLink>
+        <div v-if="servicesData?.length > 0" class="grid-container grid-4-colmns gap-sm sectionCards">
+          <div v-for="(property,indexProperty) in servicesData">
+            <DefaultsCardsCardProperty :property="property" :index="indexProperty"/>
+          </div>
+
         </div>
       </section>
   </div>

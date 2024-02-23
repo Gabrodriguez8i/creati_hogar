@@ -61,7 +61,7 @@ const prev = ()=>{
 onMounted(()=>{
     setInterval(()=>{
         next();
-    },10000)
+    },18000)
 })
 
 // onMounted(() => {

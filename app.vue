@@ -304,7 +304,7 @@
   .let-price-details {
 	display: flex;
 	flex-direction: column;
-	margin-top: 1.6rem;
+	margin-top: 1.6rem !important;
 	padding: 1rem;
   }
   .let-titile-footer{

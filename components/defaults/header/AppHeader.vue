@@ -469,7 +469,7 @@ onMounted(()=>{
 
 @media screen and (max-width: 650px) {
   .header{
-    padding: 15px 15px;
+    padding: 5px 15px;
   }
 
 }
