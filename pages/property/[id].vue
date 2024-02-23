@@ -130,7 +130,7 @@
                 </div>
                 <hr />
               </div>
-              <div class="right flex">
+              <div class="right flex boxReserve">
                 <div class="card flex">
 
                   <div class="date-block flex">
@@ -1113,6 +1113,13 @@ footer .container.house {
     .thumbnail {
       justify-content: start;
       padding: 0 40px;
+    }
+  }
+
+
+  @media (max-width: 650px){
+    .boxReserve{
+      display: none;
     }
   }
   @media screen and (max-height: 540px) {

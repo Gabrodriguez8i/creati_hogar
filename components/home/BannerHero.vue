@@ -224,20 +224,37 @@ svg{
     filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+
 }
 .thumbnail .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+    position: relative;
 }
 .thumbnail .item.active{
     filter: brightness(1.5);
+
+}
+
+.thumbnail .item.active::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient( to top, #000000cc 20%, transparent );
+    z-index: 0;
 }
 .thumbnail .item .content{
     position: absolute;
     inset: auto 10px 10px 10px;
     color: #eee;
+    z-index: 1;
 }
 
 @media (max-width: 1280px){
@@ -271,12 +288,26 @@ svg{
 }
 
 @media (max-width: 650px){
+    .hero .hero_slider .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    }
     .hero .hero_slider .item .content h2{
-        font-size: 40px;
+        font-size: 30px;
+    }
+
+    .btnMore{
+        font-size: 12px;
     }
 
     .arrows{
         top: 60%;
+    }
+    .thumbnail{
+        padding: 20px;
+    }
+    .thumbnail .item{
+        width: 160px;
     }
 }
 

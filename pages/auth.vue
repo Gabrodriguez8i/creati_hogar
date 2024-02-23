@@ -570,7 +570,20 @@ main.sign-up-mode .carousel {
     width: 100%;
   }
 }
-
+@media (max-width:650px){
+  .auth{
+    padding: 1em;
+  }
+  .auth_btnBx{
+    margin: 20px auto 35px;
+  }
+  .carousel{
+    display: none;
+  }
+  .text{
+    text-align: center;
+  }
+}
 @media (max-width: 530px) {
   main {
     padding: 1em;

@@ -408,4 +408,15 @@ onMounted(() => {
   }
   /* search end */
 }
+
+@media(max-width:650px){
+  /* services start*/
+  .services{
+    padding: 0 1.4rem;
+  }
+
+  .filter-btn{
+    margin-right: 8px;
+  }
+}
 </style>

@@ -94,7 +94,6 @@ padding:5%;
 .footer .row ul li{
 display:block;
 margin:10px 0px;
-text-align:left;
 }
 .footer .row a i{
 margin:0% 3%;

@@ -15,6 +15,7 @@
 <style >
 .page{
   min-height: 100vh;
+  overflow: hidden;
 }
 
 
