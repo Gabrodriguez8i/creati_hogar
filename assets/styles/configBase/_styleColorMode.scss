@@ -1,0 +1,60 @@
+@use '../variables';
+
+
+// mode dark (primary) ----------------------------------
+body {
+	background: variables.$darkColor-background; 
+	color: variables.$darkColor-color;
+	// color: variables.$lightColor-color
+}
+
+a,span,p, h1, h2 {
+    color: variables.$darkColor-color;
+}
+
+a:hover{
+	color: variables.$whiteDefault;
+	// background: variables.$primary; 
+}
+
+// scroll color
+*::-webkit-scrollbar-thumb{
+	background: variables.$darkColor-scroll;
+	border-radius: 10px
+}
+
+
+
+
+
+
+// mode dark ------------------------------------
+// .dark-mode body {
+//   background: variables.$darkColor-background;
+//   color: variables.$darkColor-color;
+// }
+
+// .dark-mode a,span,p {
+//   color: variables.$darkColor-color;
+// }
+
+// // scroll color
+// .dark-mode *::-webkit-scrollbar-thumb{
+// 	background: variables.$darkColor-scroll;
+// 	border-radius: 10px;
+// }
+
+
+
+
+
+
+// // mode sepia ----------------------------------
+// .sepia-mode body {
+//   background: variables.$sepia-background;
+//   color: variables.$lightColor-color;
+// }
+// .sepia-mode a,span,p {
+//     color: variables.$lightColor-color;
+// }
+

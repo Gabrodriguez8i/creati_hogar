@@ -1,0 +1,39 @@
+// colors globals
+$primary: #3c8dbc;
+$secondary: #2b9ac9;
+$blue-dark: #2b4049;
+$white-primary: #fff;
+$whiteDefault: #eeeeee;
+$primary-gradient: linear-gradient(to right, rgba(54, 121, 160, 0.089), rgba(88, 201, 253, 0.204));
+$grey-color: #F1F0F6;
+$darkGrey-color: #8D8D8D;
+$red: #FC3B56;
+
+
+
+// dark mode
+$darkColor-background: #000;
+$darkColor-backgroundBlur:  rgba(28,28,38,.7);
+$darkColor-backgroundBlur-secundary: linear-gradient(to right bottom, rgb(255 255 255 / 10%), rgb(255 255 255 / 16%));
+$darkColor-shadowBlur:  20px 20px 50px rgba(0,0,0,0.5);
+$darkColor-color: #ececec;
+$darkColor-color-hover: #ffffff;
+$darkColor-colorDark: #292929;
+
+$darkColor-scroll: #73788b74;
+$darkColor-border: rgba(255, 255, 255, 0.132);
+
+
+// light mode
+$lightColor-background: linear-gradient(to right top, #2e8bff, #cef9ff);
+$lightColor-backgroundBlur: linear-gradient( to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4) );
+$lightColor-shadowBlur:  20px 20px 50px rgba(0, 0, 0, 0.119);
+$lightColor-color: #433422;
+$lightColor-scroll: #6ad8f640;
+$lightColor-border: rgba(34, 124, 170, 0.097);
+
+
+
+//  sepia mode
+$sepia-background:#f1e7d0;
+

@@ -1,0 +1,25 @@
+{
+    "categories":[
+        {
+            "name": "Ocean", "link": "", "icon": "ic:outline-beach-access"
+        },
+        {
+            "name": "Mountains", "link": "", "icon": "ic:outline-landscape"
+        },
+        {
+            "name": "Desert", "link": "", "icon": "ic:outline-wb-sunny"
+        },
+        {
+            "name": "Forest", "link": "", "icon": "ic:outline-forest"
+        },
+        {
+            "name": "Golf", "link": "", "icon":"ic:baseline-sports-golf"
+        },
+        {
+            "name": "Skiing", "link": "", "icon": "ic:outline-forest"
+        },
+        {
+            "name": "Pools", "link": "", "icon": "ic:outline-forest"
+        }
+    ]
+}

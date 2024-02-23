@@ -1,0 +1,55 @@
+{
+    "services": [
+        {
+          "id": 9,
+          "name": "Stunning house by golf course",
+          "description": "La diversión espera a tu familia en esta elegante casa cerca de un centro comercial. Ideal para vacaciones, visitas médicas o estancias de negocios en Caracas. Experimente la tranquilidad en una comunidad cerrada con una vista panorámica del campo de golf.",
+          "mainImage": "/images/BannerHero/banner1.jpg",
+          "address":{
+            "city": "Caracas",
+            "state": "Distrito Capital"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Colonial villa golf course",
+          "description": "¡Bienvenido al lujo frente al campo de golf! Esta residencia en Caracas combina encanto colonial con comodidades modernas. Disfruta de la piscina de diseño blanco y las vistas panorámicas, relájate en el sauna de madera de roble y descubre habitaciones espaciosas.",
+          "mainImage": "/images/BannerHero/banner2.jpg",
+          "address":{
+            "city": "Caracas",
+            "state": "Distrito Capital"
+          }
+        },
+        {
+          "id": 8,
+          "name": "Acogedora villa en tucacas",
+          "description": "Bienvenido a nuestra encantadora villa en Sanare, cerca de Tucacas, donde la comodidad y la serenidad se encuentran.",
+          "mainImage": "/images/BannerHero/banner3.jpg",
+          "address":{
+            "city": "Sanare",
+            "state": "Falcon"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Cabaña vertraut en Colonia Tovar",
+          "description": "Descubre nuestra cabaña vacacional en la fría Colonia Tovar. Para 12 personas, ofrece diversión con mesa de pool y bar. Las impresionantes vistas a las montañas cautivan, mientras el fogón y la parrillera a leña crean un ambiente acogedor.",
+          "mainImage": "/images/BannerHero/banner4.jpg",
+          "address":{
+            "city": "Colonia Tovar",
+            "state": "Aragua"
+          }
+        },
+        {
+          "id": 6,
+          "name": "Increible casa en el Peñon",
+          "description": "Te encantará esta casa que tiene todo lo que necesitas para disfrutar de unos días inolvidables. Ubicada en el Condominio Campestre El Peñón, con seguridad 24/7. Esta casa cuenta con una piscina espectacular, un campo de golf privado, una zona de barbacoa y un diseño interior de ensueño.",
+          "mainImage": "/images/BannerHero/banner5.jpg",
+          "address":{
+            "city": "Cundinamarca",
+            "state": "Bogota"
+          }
+        }
+      
+        ]
+}
