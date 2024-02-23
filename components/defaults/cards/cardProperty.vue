@@ -6,8 +6,16 @@
                 </div>
 
                 <div class="buttons" style="z-index: 10000">
-                    <button @click="prev" id="prev"> < </button>
-                    <button @click="next" id="next">></button>
+                    <button @click="prev" id="prev">
+                        <ClientOnly>
+                            <Icon class="i" name="ic:round-chevron-left" size="15px"  />
+                        </ClientOnly>
+                    </button>
+                    <button @click="next" id="next">
+                        <ClientOnly>
+                            <Icon class="i" name="ic:round-chevron-right" size="15px"  />
+                        </ClientOnly>
+                    </button>
                 </div>
                 <ul class="dots">
                     <li  v-for="(image, indexDots) in property.imagesSlider" :key="indexDots" @click="dotsClick(indexDots)" :class="{'active': itemActive == indexDots }"></li>
@@ -218,7 +226,7 @@ let reloadSlider = ()=>{
         max-width:388px;
     }
     .slider, .slider .list img{
-        max-width:470px;
+        max-width:388px;
     }
 }
 // @media screen and (max-width: 768px){
