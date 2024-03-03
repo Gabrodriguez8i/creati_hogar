@@ -7,7 +7,8 @@
         <div class="hero_slider">
 
             <div v-for="(service,indexSlider) in services" :key="indexSlider" class="item" :class="{ 'active': indexSlider == itemActive }">
-                <img :src="service.mainImage">
+                <!-- <img :src="service.mainImage"> -->
+                <NuxtImg :src="service.mainImage" alt="imagen de propieda creati hogar"  provider="cloudinary" format="webp"/>
                 <div class="content">
                     <p>{{ service.address.city }} {{ service.address.state }} </p>
                     <h2>{{ service.name }}</h2>
@@ -36,7 +37,9 @@
         <!-- thumbnail -->
         <div class="thumbnail">
             <div v-for="(thumbnail,indexThumbnail) in services" @click="itemActive = indexThumbnail" class="item" :class="{'active': indexThumbnail == itemActive}">
-                <img :src="thumbnail.mainImage">
+                <!-- <img :src="thumbnail.mainImage"> -->
+                <NuxtImg :src="thumbnail.mainImage" alt="imagen de propieda creati hogar"  provider="cloudinary" format="webp"/>
+
                 <div class="content">
                     {{ thumbnail.name }}
                 </div>
@@ -123,6 +126,10 @@ svg{
     max-width: 80%;
     z-index: 1;
     color: white;
+}
+
+.hero .hero_slider .item .content p{
+    line-height: 25px;
 }
 .hero .hero_slider .item .content p:nth-child(1){
     text-transform: uppercase;
@@ -272,13 +279,28 @@ svg{
 }
 
 @media (max-width: 1280px){
+
+    .hero .hero_slider .item .content{
+        top: 18%;
+    }
+
+    .hero .hero_slider .item .content p{
+    font-size: 14px;
+  }
+
+  .hero .hero_slider .item .content h2{
+        font-size: 40px;
+    }
+
     .thumbnail{
         align-items: flex-end;
     }
     .thumbnail .item{
-        height: 155px;
+        height: 145px;
     }
 }
+
+
 @media screen and (max-width: 1075px) {
 
     .tab-navigation{

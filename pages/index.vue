@@ -1,7 +1,7 @@
 <template>
   <div>
     <HomeBannerHero/> 
-  
+    <!-- <NuxtImg  provider="cloudinary" src="/cld-sample-5.jpg" format="webp"/> -->
       <section class="services">
         <!-- filter bx -->
         <div class="filterBx">
@@ -68,18 +68,7 @@ const selectFilter = ref<string>('');
 let servicesData = ref<Service[]>([]);
 
 watch (text_search, (newValue: string )=>{
-  console.log("new value: ", newValue);
-  // if(newValue.length > 2 ){
     viewServices();
-    // const { data: services, error, pending } = useAsyncData('services', async ()=>{
-    //   const {data} = await supabase.from('services').select('*').like('name', `%${text_search.value}%`).range(0,9);
-    //   console.log("filtered search data: ", data)
-    //   if(data != null && data.length > 0) servicesData = data;
-    //   else if(data != null && data.length == 0){
-    //     alert("sin resultados...");
-    //   }
-    // })
-  // }
 })
 
 watch (selectFilter, (newValue:string)=>{
@@ -94,7 +83,7 @@ const viewServices = async ()=>{
   console.log("viewServices")
 // Usa useAsyncData para cargar los datos
     console.log("async");
-    let services = supabase.from('services').select('*')
+    let services = supabase.from('services').select('*').eq('show', true)
 
     if(text_search.value.length > 2) services.like('name', `%${text_search.value}%`)
 
@@ -280,6 +269,9 @@ onMounted(() => {
     overflow: hidden;
   
 }
+
+
+
 
 /* card service end */
 @media(max-width:850px){

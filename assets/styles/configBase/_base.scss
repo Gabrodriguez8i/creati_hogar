@@ -40,6 +40,9 @@ h3 {
 	// font-family: "Montserrat", sans-serif;
 	// font-size: 0.8rem;
 }
+li {
+  list-style-type: none;
+}
   
   /* CONTAINER */
   // .container {
@@ -152,3 +155,28 @@ h3 {
       font-size: 12px;
     }
   }
+
+
+
+
+  // styles CANLENDAR START ------------------
+  .vc-container,
+  .vc-container * {
+   width: 100%;
+  }
+
+  .vc-header .vc-arrow, .vc-title{
+    background: transparent;
+  }
+
+  .vc-nav-header button{
+    color: gray;
+  }
+
+  .vc-nav-items button:hover{
+    color: white;
+  }
+
+
+
+  // styles CANLENDAR END ------------------

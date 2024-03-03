@@ -10,11 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.0.0",
     "@nuxtjs/supabase": "^1.1.6",
-    "nuxt": "^3.9.3",
+    "@samk-dev/nuxt-vcalendar": "^1.0.2",
+    "ipx": "^3.0.1",
+    "nuxt": "^3.10.3",
     "nuxt-icon": "^0.6.8",
     "sass": "^1.70.0",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
   }
 }

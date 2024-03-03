@@ -2,7 +2,11 @@
           <div class="cardBx" >
             <div class="slider">
                 <div class="list" ref="list">
-                    <img v-for="(image, index) in property.imagesSlider" class="item" ref="itemsCurrent" :class="{'active': itemActive == index}" :src="image" alt="imagen de propieda creati hogar">
+                    <div v-for="(image, index) in property.imagesSlider" class="item" ref="itemsCurrent" :class="{'active': itemActive == index}">
+                        <NuxtImg style="width: 100%; height: 100%;"  :src="image" alt="imagen de propieda creati hogar"  provider="cloudinary" format="webp"/>
+                    </div>
+
+                    <!-- <img  v-for="(image, index) in property.imagesSlider" class="item" ref="itemsCurrent" :class="{'active': itemActive == index}" :src="image" alt="imagen de propieda creati hogar"> -->
                 </div>
 
                 <div class="buttons" style="z-index: 10000">

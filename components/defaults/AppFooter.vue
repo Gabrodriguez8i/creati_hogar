@@ -66,6 +66,7 @@ text-decoration:none;
 color:gray;
 transition:0.5s;
 width: auto;
+margin: 0 5px;
 }
 
 .footer .row a:hover{
