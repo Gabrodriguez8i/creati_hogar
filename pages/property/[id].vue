@@ -321,7 +321,7 @@ const {
 .property_container_info_leftBx_infoMain_items{
   display: flex;
   align-items: center;
-
+  flex-wrap: wrap;
   padding-top: 0.5em;
   gap: 0.3em;
   font-weight: 500;
@@ -355,7 +355,7 @@ const {
 
 .property_container_info_leftBx_infoMain_items_bx {
   display: flex;
-  margin-right: 10px;
+  margin: 5px 10px 5px 0px;
 }
 .property_container_info_leftBx_infoMain_items_bx_text {
   margin: 0 5px;
@@ -376,13 +376,15 @@ const {
   width: 50%;
   margin: 4px 0px;
   font-size: 14px;
+  min-height: 28px;
 }
 
 .property_container_info_leftBx_amenities_list_item_text {
   display: flex;
   gap: 0.4em;
   flex-direction: column;
-  font-weight: 600;
+  font-weight: 500;
+  max-width: 78%;
 
 }
 
@@ -472,12 +474,58 @@ const {
 @media (max-width: 1280px) {
 .property_container_info_leftBx_amenities_list_item {
   font-size: 12px;
+  gap: 1em;
 }
 
 }
+
+@media (max-width: 1100px){
+
+  .property_container_pictures{
+    display: none;
+  }
+.property_background {
+  opacity: 1;
+  height: 500px;
+  width: 100%;
+}
+
+.property_background::after{
+  background-image: linear-gradient(to top, #000 0%, #0000004a);
+}
+
+.property_container_info_leftBx{
+  max-width: 100%;
+}
+
+
+}
   @media (max-width: 650px){
+
+    .property{
+      padding: 200px 20px 20px;
+    }
+    .property_background {
+  opacity: 1;
+  height: 300px;
+  width: 100%;
+}
     .property_container_info_right{
       display: none;
+    }
+
+    .property_container_info_leftBx_amenities_list_item_text{
+      font-size: 12px;
+
+    }
+
+    .property_container_info_leftBx_rooms_list{
+      overflow-x: scroll ;
+      padding-bottom: 25px;
+    }
+
+    .property_container_info_leftBx_rooms_list_bx{
+      padding: 0.1em;
     }
   }
 </style>

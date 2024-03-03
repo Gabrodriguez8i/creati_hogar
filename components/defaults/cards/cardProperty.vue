@@ -193,7 +193,7 @@ let reloadSlider = ()=>{
     background-color: rgb(0 0 0 / 60%);
     color: #fff;
     border: none;
-    font-family: monospace;
+    // font-family: monospace;
     font-weight: bold;
 }
 .slider .dots{

@@ -1,5 +1,18 @@
 @use '../variables';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+// font ---
+@font-face{
+  font-family: 'Cailyne', sans-serif;
+  src: local("fonts");
+  src: url("/public/fonts/CailyneItalic-6YOP1.otf") format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 // page transition config
 .page-enter-active,
 .page-leave-active {
@@ -24,7 +37,8 @@
   
   body {
 	font-size: 1.6rem !important;
-	/* font-family: "Roboto", sans-serif; */
+	// font-family: "Poppins", sans-serif;
+	// font-family: "Cailyne";
 	font-family: "Poppins", sans-serif;
   min-height: 100vh;
   }

@@ -36,7 +36,7 @@
 </div>
 
 <div class="row">
-Creati Hogar Copyright © {{ new Date().getFullYear() }} - All rights reserved || Designed By: <a href="https://linkeding" target="_blank">Gabriel Rodríguez</a> 
+Creati Hogar Copyright © {{ new Date().getFullYear() }} 
 </div>
 </div>
 </footer>
@@ -47,7 +47,7 @@ Creati Hogar Copyright © {{ new Date().getFullYear() }} - All rights reserved |
 .footer{
 background:#000;
 padding:30px 0px;
-font-family: 'Play', sans-serif;
+/* font-family: 'Play', sans-serif; */
 text-align:center;
 }
 
