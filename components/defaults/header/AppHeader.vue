@@ -77,7 +77,6 @@ onMounted(()=>{
       // Verifica si los elementos existen antes de intentar acceder a sus propiedades
       if (header && navbar) {
           const height = header.clientHeight;
-          console.log("window.scrollY: ", window.scrollY );
           header.classList.toggle('header_active', window.scrollY + 50 > height);
 
       }

@@ -72,7 +72,6 @@ watch (text_search, (newValue: string )=>{
 })
 
 watch (selectFilter, (newValue:string)=>{
-  console.log("selecFilter new value: ", newValue);
     viewServices();
 
 })
@@ -80,9 +79,7 @@ const supabase = useSupabaseClient<Service[]>();
 
 
 const viewServices = async ()=>{
-  console.log("viewServices")
 // Usa useAsyncData para cargar los datos
-    console.log("async");
     let services = supabase.from('services').select('*').eq('show', true)
 
     if(text_search.value.length > 2) services.like('name', `%${text_search.value}%`)
@@ -96,9 +93,7 @@ const viewServices = async ()=>{
       return;
     }
     if (data) {
-      console.log("data: ", data);
       servicesData.value = data; // Almacena los datos en la variable externa
-      // clearState(); // limpiar el state de filtros
     }
 }
 

@@ -81,7 +81,6 @@ let itemsCurrent = ref('');
 let list = ref('');
 
 const next = ()=>{
-    console.log("property: ", props.property);
     itemActive.value == props.property.imagesSlider.length - 1 ? itemActive.value = 0 : itemActive.value += 1;
     reloadSlider();
 }
