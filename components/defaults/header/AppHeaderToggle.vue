@@ -1,6 +1,7 @@
 <template>
         <div class="hamburger" @click="toggle = !toggle">
-            <input class="checkbox" type="checkbox" :checked="toggle"/>
+            <input class="checkbox" type="checkbox" :checked="toggle" id="toggleMenu"/>
+            <label for="toggleMenu" style="display: none;"></label>
             <svg fill="none" viewBox="0 0 50 50" height="30" width="30">
                 <path
                 class="lineTop line"

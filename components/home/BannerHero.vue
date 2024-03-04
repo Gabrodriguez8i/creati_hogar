@@ -21,13 +21,13 @@
         <!-- button arrows -->
             <div class="arrows">
                 
-                <button @click="prev" id="prev" class="arrows_btn"> 
+                <button @click="prev"  class="arrows_btn" aria-label="Next property"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-left" size="15px"  />
                     </ClientOnly>
                 </button>
     
-                <button @click="next" id="next" class="arrows_btn"> 
+                <button @click="next"  class="arrows_btn" aria-label="prev property"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-right" size="15px"  />
                     </ClientOnly>
@@ -103,6 +103,7 @@ svg{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.7;
 }
 .hero .hero_slider .item::after{
     content: '';
@@ -111,12 +112,10 @@ svg{
     position: absolute;
     left: 0;
     bottom: 0;
-    /* background-image: linear-gradient(
-        to top, #000 40%, transparent
-    ); */
     background-image: linear-gradient(
-        to top, #000 27%, transparent
+        to top, #000 18%, transparent
     );
+
 }
 .hero .hero_slider .item .content{
     position: absolute;
@@ -208,9 +207,8 @@ svg{
     max-width: 100px;
 }
 .arrows button{
-    background-color: #eee5;
+    background-color: #2e2e2e;
     border: none;
-    /* font-family: monospace; */
     width: 40px;
     height: 40px;
     border-radius: 5px;

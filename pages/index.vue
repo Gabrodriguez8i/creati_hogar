@@ -7,25 +7,25 @@
         <div class="filterBx">
           <!-- filter bx BTN  -->
           <div class = "filter-btns">
-            <button @click="selectFilter = ''" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == ''}" id = "best-sellers">
+            <button @click="selectFilter = ''" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == ''}" >
               <ClientOnly>
                 <Icon name="material-symbols:background-grid-small-sharp" size="14px" class="check-icon" />
               </ClientOnly>
               Todos
             </button>
-            <button @click="selectFilter = 'beach'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'beach'}" id = "all">
+            <button @click="selectFilter = 'beach'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'beach'}" >
               <ClientOnly>
                 <Icon name="ic:outline-beach-access" size="14px" class="check-icon" />
               </ClientOnly>
               Playa
             </button>
-            <button @click="selectFilter = 'city'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'city'}" id = "new">
+            <button @click="selectFilter = 'city'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'city'}" >
               <ClientOnly>
                 <Icon name="ic:baseline-location-city" size="14px" class="check-icon" />
               </ClientOnly>
                 Ciudad
             </button>
-            <button @click="selectFilter = 'mountain'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'mountain'}"  id = "best-sellers">
+            <button @click="selectFilter = 'mountain'" type = "button" class = "filter-btn" :class="{'filter-btn_active' : selectFilter == 'mountain'}" >
               <ClientOnly>
                 <Icon name="ic:outline-landscape" size="14px" class="check-icon" />
               </ClientOnly>

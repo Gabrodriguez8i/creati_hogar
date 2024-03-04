@@ -3,22 +3,22 @@
 	<footer>
 <div class="footer">
 <div class="row">
-<a href="#">
+<a href="#" aria-label="Contact us in Facebook">
 	<ClientOnly>
     	<Icon name="mdi:facebook" size="24px"  />
     </ClientOnly>
 </a>
-<a href="#">
+<a href="#" aria-label="Contact us in instagram">
 	<ClientOnly>
     	<Icon name="mdi:instagram" size="24px"  />
     </ClientOnly>
 </a>
-<a href="#">
+<a href="#" aria-label="Contact us in linkedin">
 	<ClientOnly>
     	<Icon name="mdi:linkedin" size="24px"  />
     </ClientOnly>
 </a>
-<a href="#">
+<a href="#" aria-label="Contact us in tiktok">
 	<ClientOnly>
     	<Icon name="ic:outline-tiktok" size="24px"  />
     </ClientOnly>
@@ -27,11 +27,11 @@
 
 <div class="row">
 <ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Career</a></li>
+<li><a href="#" aria-label="Contact us">Contact us</a></li>
+<li><a href="#" aria-label="Our Services Creati">Our Services</a></li>
+<li><a href="#" aria-label="Privacy Policy of Creati">Privacy Policy</a></li>
+<li><a href="#" aria-label="Terms & Conditions of Creati">Terms & Conditions</a></li>
+<li><a href="#" aria-label="Career Creati">Career</a></li>
 </ul>
 </div>
 

@@ -27,7 +27,7 @@
                 <div class="heading">
                     <h2>Bienvenido</h2>
                     <h6>¿Aún no estás registrado?</h6>
-                    <a href="#" class="toggle">Registrate</a>
+                    <a href="#" class="toggle" aria-label="Register in Creati Hogar">Registrate</a>
                 </div>
 
                 <div class="actual-form">
@@ -44,7 +44,7 @@
 
                     <p class="text">
                         ¿Olvidó su contraseña o sus datos de inicio de sesión? 
-                    <a href="#" style="color: white;">Obtén ayuda</a> para iniciar sesión.
+                    <a href="#" style="color: white;" aria-label="ask for help">Obtén ayuda</a> para iniciar sesión.
                     </p>
                 </div>
                 </form>
@@ -58,7 +58,7 @@
                 <div class="heading">
                     <h2>Registrate</h2>
                     <h6>¿Ya tienes una cuenta?</h6>
-                    <a href="#" class="toggle">Iniciar sesión</a>
+                    <a href="#" class="toggle" aria-label="login in Creati">Iniciar sesión</a>
                 </div>
 
                 <div class="actual-form">
@@ -78,8 +78,8 @@
 
                     <p class="text">
                         acepto los 
-                    <a href="#" style="color: white;">Términos de servicios</a> y
-                    <a href="#" style="color: white;">la Política de privacidad.</a>
+                    <a href="#" style="color: white;" aria-label="Terms & Conditions of Creati">Términos de servicios</a> y
+                    <a href="#" style="color: white;" aria-label="Privacy Policy of Creati">la Política de privacidad.</a>
                     </p>
                 </div>
                 </form>

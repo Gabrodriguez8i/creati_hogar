@@ -77,7 +77,9 @@ onMounted(()=>{
       // Verifica si los elementos existen antes de intentar acceder a sus propiedades
       if (header && navbar) {
           const height = header.clientHeight;
-          header.classList.toggle('header_active', window.scrollY + 90 > height);
+          console.log("window.scrollY: ", window.scrollY );
+          header.classList.toggle('header_active', window.scrollY + 50 > height);
+
       }
   });
 })
@@ -121,9 +123,10 @@ onMounted(()=>{
 }
 
 .header_container_head_title_text{
-  font-size: 25px;
-  font-weight: 700;
-  transition: all .1s ease-in;
+  font-size: 28px;
+    font-weight: 700;
+    transition: all 0.1s ease-in;
+    text-shadow: 2px 1px #0000006e;
 
 }
 
@@ -471,6 +474,14 @@ onMounted(()=>{
   .header{
     padding: 5px 15px;
   }
+  .header_container_head_title{
+    align-items: center;
+  }
+
+  .header_container_head_subMenu{
+    padding: 5px 0px;
+  }
+  
 
 }
 </style>
