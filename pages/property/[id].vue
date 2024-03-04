@@ -1,6 +1,5 @@
 <template>
   <section>
-    <!-- slider -->
     <div v-if="pending">LOADING...</div>
     <div v-else class="property">
       <div class="property_background">
@@ -481,9 +480,9 @@ const {
 
 @media (max-width: 1100px){
 
-  .property_container_pictures{
+.property_container_pictures{
     display: none;
-  }
+}
 .property_background {
   opacity: 1;
   height: 500px;
@@ -497,32 +496,39 @@ const {
 .property_container_info_leftBx{
   max-width: 100%;
 }
-
+.property_container_info_right{
+  position: fixed;
+    bottom: -39%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+}
 
 }
-  @media (max-width: 650px){
 
+@media (max-width: 850px){
+  .property_container_info_leftBx_rooms_list{
+      overflow-x: scroll ;
+      padding-bottom: 25px;
+    }
+}
+  @media (max-width: 650px){
     .property{
       padding: 200px 20px 20px;
     }
     .property_background {
-  opacity: 1;
-  height: 300px;
-  width: 100%;
-}
-    .property_container_info_right{
-      display: none;
+      opacity: 1;
+      height: 300px;
+      width: 100%;
     }
 
     .property_container_info_leftBx_amenities_list_item_text{
       font-size: 12px;
-
     }
 
-    .property_container_info_leftBx_rooms_list{
-      overflow-x: scroll ;
-      padding-bottom: 25px;
-    }
+
 
     .property_container_info_leftBx_rooms_list_bx{
       padding: 0.1em;
