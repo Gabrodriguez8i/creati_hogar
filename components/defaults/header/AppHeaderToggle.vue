@@ -1,7 +1,6 @@
 <template>
         <div class="hamburger" @click="toggle = !toggle">
-            <input class="checkbox" type="checkbox" :checked="toggle" id="toggleMenu"/>
-            <label for="toggleMenu" style="display: none;"></label>
+          <input class="checkbox" type="checkbox" :checked="toggle" id="toggleMenu" aria-label="view options menu"/>
             <svg fill="none" viewBox="0 0 50 50" height="30" width="30">
                 <path
                 class="lineTop line"
@@ -25,6 +24,8 @@
                 class="lineBottom line"
                 ></path>
             </svg>
+          <label for="toggleMenu" class="hamburger_labelVisuallyHidden"></label>
+
         </div>
 
         <div class="main_container_header_subMenu_list" :style="toggle ? 'display:flex' : 'display:none'">
@@ -119,6 +120,17 @@ let toggle = ref(false);
   height: 100%;
   width: 100%;
   cursor: pointer;
+}
+
+.hamburger_labelVisuallyHidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 .line {
   transition: 0.5s;

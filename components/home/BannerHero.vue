@@ -20,19 +20,17 @@
         </div>
         <!-- button arrows -->
             <div class="arrows">
-                
-                <button @click="prev"  class="arrows_btn" aria-label="Next property"> 
+                <span @click="prev" class="arrows_btn"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-left" size="15px"  />
                     </ClientOnly>
-                </button>
+                </span>
     
-                <button @click="next"  class="arrows_btn" aria-label="prev property"> 
+                <span @click="next" class="arrows_btn"> 
                     <ClientOnly>
                         <Icon class="i" name="ic:round-chevron-right" size="15px"  />
                     </ClientOnly>
-
-                </button>
+                </span>
             </div>
         <!-- thumbnail -->
         <div class="thumbnail">
@@ -206,7 +204,7 @@ svg{
     min-width: 90px;
     max-width: 100px;
 }
-.arrows button{
+.arrows span{
     background-color: #2e2e2e;
     border: none;
     width: 40px;
@@ -215,8 +213,12 @@ svg{
     font-size: x-large;
     color: #eee;
     transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
-.arrows button:hover{
+.arrows span:hover{
     background-color: #eee;
     color: black;
 }
