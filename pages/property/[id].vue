@@ -14,17 +14,8 @@
                 </div>
               </div>
               <div class="property_container_pictures_bxRight">
-                <div class="property_container_pictures_bxRight_imgBx">
-                  <img src="/images/place/1.webp" class="property_container_pictures_bxRight_imgBx_img" alt="P1" />
-                </div>
-                <div class="property_container_pictures_bxRight_imgBx">
-                  <img src="/images/place/2.webp" class="property_container_pictures_bxRight_imgBx_img" alt="P2" />
-                </div>
-                <div class="property_container_pictures_bxRight_imgBx">
-                  <img src="/images/place/3.webp" class="property_container_pictures_bxRight_imgBx_img" alt="P3" />
-                </div>
-                <div class="property_container_pictures_bxRight_imgBx">
-                  <img src="/images/place/4.webp" class="property_container_pictures_bxRight_imgBx_img" alt="P4" />
+                <div v-for="(imageGalery, indexImageGalery) in service.galeryImages" class="property_container_pictures_bxRight_imgBx">
+                  <NuxtImg  class="property_container_pictures_bxRight_imgBx_img" :src="imageGalery" :alt="`P${indexImageGalery}`"  provider="cloudinary" format="webp"/>
                 </div>
               </div>
         </div>
@@ -262,6 +253,9 @@ const {
 
   .property_container_pictures_bxRight_imgBx_img {
     height: 16em;
+    background-size: cover;
+    object-fit: cover;
+    max-width: 100%;
   }
 
 

@@ -34,4 +34,5 @@ export interface Service {
     imagesBedrooms?: bedroomService,
     commonAmenities?: AmenitiesComunesServices[],
     mapDirection?: string
+    galeryImages?: string[]
 }
