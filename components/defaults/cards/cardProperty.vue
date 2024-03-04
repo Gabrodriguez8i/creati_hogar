@@ -10,16 +10,16 @@
                 </div>
 
                 <div class="buttons" style="z-index: 10000">
-                    <button @click="prev" id="prev">
+                    <span @click="prev">
                         <ClientOnly>
                             <Icon class="i" name="ic:round-chevron-left" size="15px"  />
                         </ClientOnly>
-                    </button>
-                    <button @click="next" id="next">
+                    </span>
+                    <span @click="next">
                         <ClientOnly>
                             <Icon class="i" name="ic:round-chevron-right" size="15px"  />
                         </ClientOnly>
-                    </button>
+                    </span>
                 </div>
                 <ul class="dots">
                     <li  v-for="(image, indexDots) in property.imagesSlider" :key="indexDots" @click="dotsClick(indexDots)" :class="{'active': itemActive == indexDots }"></li>
@@ -186,7 +186,7 @@ let reloadSlider = ()=>{
     opacity: 0.5;
     transition: .3s;
 }
-.slider .buttons button{
+.slider .buttons span{
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -195,6 +195,10 @@ let reloadSlider = ()=>{
     border: none;
     // font-family: monospace;
     font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .slider .dots{
     position: absolute;
