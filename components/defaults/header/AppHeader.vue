@@ -125,7 +125,8 @@ onMounted(()=>{
   font-size: 28px;
     font-weight: 700;
     transition: all 0.1s ease-in;
-    text-shadow: 2px 1px #0000006e;
+    text-shadow:2px 1px rgb(0 0 0 / 31%);
+
 
 }
 
