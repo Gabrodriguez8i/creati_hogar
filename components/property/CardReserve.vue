@@ -94,7 +94,6 @@ const disabledDates = ref([
   font-size: 0.9em;
   line-height: 1.125em;
   font-weight: 500;
-  /* text-transform: uppercase; */
   color: hsla(0, 0%, 100%, 0.6);
   padding-top: 0.7em;
 }
@@ -124,6 +123,20 @@ const disabledDates = ref([
   margin: 0.4em 0 0 0;
   font-weight: 600;
 
+}
+
+
+@media (max-width: 1100px){
+.property_container_info_right_card_head{
+    height: 35px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+  }
 }
 
 </style>

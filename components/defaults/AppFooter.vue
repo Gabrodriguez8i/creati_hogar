@@ -1,54 +1,56 @@
 <template>
     <!------------------------------------- FOOTER ------------------------------------------------>
 	<footer>
-<div class="footer">
-<div class="row">
-<a href="#" aria-label="Contact us in Facebook">
-	<ClientOnly>
-    	<Icon name="mdi:facebook" size="24px"  />
-    </ClientOnly>
-</a>
-<a href="#" aria-label="Contact us in instagram">
-	<ClientOnly>
-    	<Icon name="mdi:instagram" size="24px"  />
-    </ClientOnly>
-</a>
-<a href="#" aria-label="Contact us in linkedin">
-	<ClientOnly>
-    	<Icon name="mdi:linkedin" size="24px"  />
-    </ClientOnly>
-</a>
-<a href="#" aria-label="Contact us in tiktok">
-	<ClientOnly>
-    	<Icon name="ic:outline-tiktok" size="24px"  />
-    </ClientOnly>
-</a>
-</div>
+        <div class="footer">
+        <div class="row">
+        <a href="#" aria-label="Contact us in Facebook">
+            <ClientOnly>
+                <Icon name="mdi:facebook" size="24px"  />
+            </ClientOnly>
+        </a>
+        <a href="#" aria-label="Contact us in instagram">
+            <ClientOnly>
+                <Icon name="mdi:instagram" size="24px"  />
+            </ClientOnly>
+        </a>
+        <a href="#" aria-label="Contact us in linkedin">
+            <ClientOnly>
+                <Icon name="mdi:linkedin" size="24px"  />
+            </ClientOnly>
+        </a>
+        <a href="#" aria-label="Contact us in tiktok">
+            <ClientOnly>
+                <Icon name="ic:outline-tiktok" size="24px"  />
+            </ClientOnly>
+        </a>
+        </div>
 
-<div class="row">
-<ul>
-<li><a href="#" aria-label="Contact us">Contact us</a></li>
-<li><a href="#" aria-label="Our Services Creati">Our Services</a></li>
-<li><a href="#" aria-label="Privacy Policy of Creati">Privacy Policy</a></li>
-<li><a href="#" aria-label="Terms & Conditions of Creati">Terms & Conditions</a></li>
-<li><a href="#" aria-label="Career Creati">Career</a></li>
-</ul>
-</div>
+        <div class="row">
+            <ul>
+                <li><a href="#" aria-label="Contact us">Contact us</a></li>
+                <li><a href="#" aria-label="Our Services Creati">Our Services</a></li>
+                <li><a href="#" aria-label="Privacy Policy of Creati">Privacy Policy</a></li>
+                <li><a href="#" aria-label="Terms & Conditions of Creati">Terms & Conditions</a></li>
+                <li><a href="#" aria-label="Career Creati">Career</a></li>
+            </ul>
+        </div>
 
-<div class="row">
-Creati Hogar Copyright © {{ new Date().getFullYear() }} 
-</div>
-</div>
+            <div class="row">
+                Creati Hogar Copyright © {{ new Date().getFullYear() }} 
+            </div>
+        </div>
 </footer>
 </template>
 
 <style scoped>
 
 .footer{
+    position: relative;
 background:#000;
 padding:30px 0px;
 /* font-family: 'Play', sans-serif; */
 text-align:center;
+z-index: 50;
 }
 
 .footer .row{

@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['nuxt-icon', '@nuxtjs/supabase', '@nuxt/image','@samk-dev/nuxt-vcalendar'],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   supabase:{
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,

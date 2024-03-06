@@ -117,12 +117,28 @@
               </div>
 
               <!-- section info RIGHT -->
-              <div class="property_container_info_right">
+              <div class="property_container_info_right" :class="{'property_container_info_right_viewCalendaryForPhone': calendaryStateForPhone}">
                 <PropertyCardReserve :dataCardReserve="{'priceBase':service.priceBase}"/>
+                <!-- button hidden calendary for phone -->
+                <div @click="viewCalendary()" class="property_container_info_right_closeCalendaryForPhone">
+                  <ClientOnly>
+                    <Icon name="ic:outline-close" size="18px" />
+                  </ClientOnly>
+                </div>
               </div>
 
         </div>
       </section>
+
+      <!-- button fixed for phone -->
+      <div @click="viewCalendary()" class="property_buttonFixedPhone" :class="{'property_buttonFixedPhone_hidden': calendaryStateForPhone}">
+        <span class="property_buttonFixedPhone_text">
+          Reservar 
+        </span>
+        <ClientOnly>
+          <Icon name="ic:outline-arrow-upward" size="18px" />
+        </ClientOnly>
+      </div>
     </div>
   </section>
 </template>
@@ -133,19 +149,16 @@ import type { Service } from "~/interfaces/Dataresponses/service";
 const route = useRoute();
 const supabase_service = useSupabaseClient<Service>();
 
-const {
-  data: service,
-  error,
-  pending,
-} = await useAsyncData("service", async () => {
-  const { data } = await supabase_service
-    .from("services")
-    .select("*")
-    .eq("id", route.params.id);
+const { data: service, error, pending } = await useAsyncData("service", async () => {
+  const { data } = await supabase_service.from("services").select("*").eq("id", route.params.id);
   if (data != null) return data[0];
 });
 
-
+// state view calendary:
+let calendaryStateForPhone = ref(false);
+const viewCalendary = ()=>{
+  calendaryStateForPhone.value = !calendaryStateForPhone.value
+}
 </script>
 
 <style scoped>
@@ -192,7 +205,32 @@ const {
   max-width: 1320px;
 }
 
+.property_buttonFixedPhone{
+  display: none;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: fixed;
+  bottom: -2px;
+  left: 0px;
+  background: white;
+  color: black;
+  z-index: 10;
+  border-radius: 8px 8px 0px 0px;
+}
 
+.property_buttonFixedPhone_hidden{
+  z-index: 0;
+  background: transparent;
+}
+
+.property_buttonFixedPhone_text{
+  color: black;
+}
 /* property CONTAINER PICTURE START */
 
   .property_container_pictures{
@@ -492,14 +530,32 @@ const {
 }
 .property_container_info_right{
   position: fixed;
-    bottom: -39%;
+    transform: translateY(100%);
+    bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
     max-width: 100%;
     padding: 0px;
+    transition: .3s;
+    z-index: 50;
 }
 
+.property_container_info_right_viewCalendaryForPhone{
+  transform: translateY(1%);
+
+}
+
+.property_container_info_right_closeCalendaryForPhone{
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.property_buttonFixedPhone{
+  display: flex;
+}
 }
 
 @media (max-width: 850px){
@@ -521,8 +577,6 @@ const {
     .property_container_info_leftBx_amenities_list_item_text{
       font-size: 12px;
     }
-
-
 
     .property_container_info_leftBx_rooms_list_bx{
       padding: 0.1em;
