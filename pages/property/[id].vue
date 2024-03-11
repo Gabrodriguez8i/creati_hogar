@@ -118,7 +118,7 @@
 
               <!-- section info RIGHT -->
               <div class="property_container_info_right" :class="{'property_container_info_right_viewCalendaryForPhone': calendaryStateForPhone}">
-                <PropertyCardReserve :dataCardReserve="{'priceBase':service.priceBase}"/>
+                <PropertyCardReserve :dataCardReserve="{'priceBase':service.priceBase, 'dataService': service }"/>
                 <!-- button hidden calendary for phone -->
                 <div @click="viewCalendary()" class="property_container_info_right_closeCalendaryForPhone">
                   <ClientOnly>
@@ -210,7 +210,7 @@ const viewCalendary = ()=>{
   width: 100%;
   height: 40px;
   padding: 10px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   gap: 5px;
@@ -502,6 +502,11 @@ const viewCalendary = ()=>{
     margin-bottom: 15px;
 }
 
+
+.property_container_info_right_closeCalendaryForPhone{
+  display: none;
+}
+
 @media (max-width: 1280px) {
 .property_container_info_leftBx_amenities_list_item {
   font-size: 12px;
@@ -548,6 +553,7 @@ const viewCalendary = ()=>{
 
 .property_container_info_right_closeCalendaryForPhone{
   position: absolute;
+  display: block;
   top: 15px;
   right: 10px;
   color: hsla(0, 0%, 100%, 0.6);

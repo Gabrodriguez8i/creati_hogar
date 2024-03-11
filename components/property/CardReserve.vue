@@ -16,7 +16,7 @@
   </div>
 
   <div class="property_container_info_right_card_buttons">
-    <span href="#" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</span>
+    <NuxtLink :to="`/pay?checkIn=${range.start}&checkOut=${range.end}&property=${dataCardReserve.dataService.id}`" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</NuxtLink>
     <!-- <span href="#" class="property_container_info_right_card_Pay_reserveBtn" @click="clearRange">Limpiar</span> -->
   </div>
 
