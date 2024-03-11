@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <main>
     <div id="paypal-checkout" />
   </main>
@@ -18,4 +18,4 @@ usePaypalButton({
     }
   },
 })
-</script>
+</script> -->
