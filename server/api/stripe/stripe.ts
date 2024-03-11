@@ -1,12 +1,29 @@
-import { loadStripe } from "@stripe/stripe-js";
-
+import Stripe from "stripe";
 export default defineEventHandler(async (event) => {
-const body = await readBody(event);
-const stripe = await loadStripe(process.env.STRIPE_SECRET_KEY);
-const elements = stripe.value.elements();
-return await stripe.value.paymentIntents.create({
-amount: Number(body.amount),
-currency: "usd",
-automatic_payment_methods: { enabled: true },
-});
+    console.log("event: ", event);
+    const body = await readBody(event); // obtener el body de la peticion
+    const config = useRuntimeConfig() // para obtener la variables de entorno
+    const stripe = new Stripe(config.STRIPE_SECRET_KEY); // inicializo STRIPE con mi api key
+
+    const session = await stripe.checkout.sessions.create({
+        success_url: "http://localhost:3000/pay/success", // data que tiene la url de pago exitoso
+        line_items:[ // lista de items cobrados
+            {
+                price_data:{
+                    currency: "usd", // para indicar que se va a pagar en dolares
+                    product_data:{ // para especificar el producto
+                        name: "property1",
+                        images: ["https://I.imgur.com/EHyR2np.png"]
+                    },
+                    unit_amount:2000, // ejemplo de monto 1000 son 10$, 2000 son 20$
+                },
+                quantity: 1 // cantidad de productos que se estaria llevando
+            }
+        ],
+        mode: "payment" // modo de pago
+    })
+
+console.log("session: ", session);
+return { session: session };
+
 });

@@ -16,15 +16,11 @@
     "ipx": "^3.0.1",
     "nuxt": "^3.10.3",
     "nuxt-icon": "^0.6.8",
-    "nuxt-paypal": "^0.0.1-beta",
     "sass": "^1.70.0",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@stripe/stripe-js": "^3.0.7",
-    "aws-amplify": "^6.0.19",
     "stripe": "^14.19.0"
   }
 }

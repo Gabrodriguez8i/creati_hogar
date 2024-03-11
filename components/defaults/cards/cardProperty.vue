@@ -25,7 +25,7 @@
                     <li  v-for="(image, indexDots) in property.imagesSlider" :key="indexDots" @click="dotsClick(indexDots)" :class="{'active': itemActive == indexDots }"></li>
                 </ul>
             </div>
-            <NuxtLink :to="`property/${property.id}`" class="cardBx_details">
+            <NuxtLink :to="`/property/${property.id}`" class="cardBx_details">
                   <h2 class="cardBx_details_minText">
                     {{ property.address.city }}, {{ property.address.state  }}
                   </h2>

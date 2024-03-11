@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['nuxt-icon', '@nuxtjs/supabase', '@nuxt/image','@samk-dev/nuxt-vcalendar', 'nuxt-paypal'],
+  modules: ['nuxt-icon', '@nuxtjs/supabase', '@nuxt/image','@samk-dev/nuxt-vcalendar'],
   devtools: { enabled: false },
   supabase:{
     url: process.env.SUPABASE_URL,
@@ -46,8 +46,6 @@ export default defineNuxtConfig({
       STRIPE_KEY: process.env.STRIPE_KEY
     }
   },
-  paypal: {
-    clientId: 'test',
-  },
+
 
 })

@@ -16,7 +16,8 @@
   </div>
 
   <div class="property_container_info_right_card_buttons">
-    <NuxtLink :to="`/pay?checkIn=${range.start}&checkOut=${range.end}&property=${dataCardReserve.dataService.id}`" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</NuxtLink>
+    <button @click="handlePay()" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</button>
+    <!-- <NuxtLink :to="`/pay?checkIn=${range.start}&checkOut=${range.end}&property=${dataCardReserve.dataService.id}`" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</NuxtLink> -->
     <!-- <span href="#" class="property_container_info_right_card_Pay_reserveBtn" @click="clearRange">Limpiar</span> -->
   </div>
 
@@ -25,7 +26,8 @@
 </template>
 
 <script setup>
-defineProps({
+// props -------- 
+let props = defineProps({
   dataCardReserve:{
     required: true,
     type: Object
@@ -33,20 +35,11 @@ defineProps({
 });
 const {$util_formatDate, $util_calcularCostoReserva } = useNuxtApp()
 
-
+// States -------- 
 const range = ref({
   start: $util_formatDate(new Date(), 'MDY'),
   end: $util_formatDate(new Date(), 'MDY'),
 });
-
-
-// const clearRange = ()=>{
-//   range.value.start = null
-//   range.value.end = null
-
-// }
-
-
 
 const selectedColor = ref('gray');
 const disabledDates = ref([
@@ -58,8 +51,21 @@ const disabledDates = ref([
 ]);
 
 
+// Methods ----------
 
-
+// Pagar servicio
+const handlePay = async ()=>{
+  const {data,error,pending} = await useFetch('/api/stripe/stripe',{
+    method: 'POST',
+    body: props.dataCardReserve
+  });
+  setTimeout( async () => {
+    console.log("dataPay.value.url: ", data.value.session.url);
+    await navigateTo(data.value.session.url,{
+    external: true
+  })
+  }, 1500);
+}
 
 </script>
 
