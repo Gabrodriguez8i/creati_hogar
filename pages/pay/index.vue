@@ -1,21 +1,3 @@
-<!-- <template>
-  <main>
-    <div id="paypal-checkout" />
-  </main>
+<template>
+  <h2>index</h2>
 </template>
-
-<script setup lang="ts">
-import { usePaypalButton } from '@/runtime/composables/usePaypal'
-
-usePaypalButton({
-  // element: '#paypal-checkout', => default
-  onApprove: async (data, actions) => {
-    try {
-      const details = await actions.order?.capture();
-      console.log('Payment completed successfully:', details);
-    } catch (error) {
-      console.error('Error capturing payment:', error);
-    }
-  },
-})
-</script> -->
