@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     const stripe = new Stripe(config.STRIPE_SECRET_KEY); // inicializo STRIPE con mi api key
 
     const session = await stripe.checkout.sessions.create({
-        success_url: "http://localhost:3000/pay/success", // data que tiene la url de pago exitoso
+        success_url: `${config.APP_URL}/pay/success`, // data que tiene la url de pago exitoso
         line_items:[ // lista de items cobrados
             {
                 price_data:{
