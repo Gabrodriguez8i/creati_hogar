@@ -17,8 +17,6 @@
 
   <div class="property_container_info_right_card_buttons">
     <button @click="handlePay()" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</button>
-    <!-- <NuxtLink :to="`/pay?checkIn=${range.start}&checkOut=${range.end}&property=${dataCardReserve.dataService.id}`" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</NuxtLink> -->
-    <!-- <span href="#" class="property_container_info_right_card_Pay_reserveBtn" @click="clearRange">Limpiar</span> -->
   </div>
 
 </div>
@@ -36,6 +34,8 @@ let props = defineProps({
 const {$util_formatDate, $util_calcularCostoReserva } = useNuxtApp()
 
 // States -------- 
+const user = useSupabaseUser();
+
 const range = ref({
   start: $util_formatDate(new Date(), 'MDY'),
   end: $util_formatDate(new Date(), 'MDY'),
@@ -55,16 +55,21 @@ const disabledDates = ref([
 
 // Pagar servicio
 const handlePay = async ()=>{
+  console.log("auth: ", user)
+  if(!user.value){
+    await navigateTo('/auth');
+    return
+  }
   const {data,error,pending} = await useFetch('/api/stripe/stripe',{
     method: 'POST',
     body: props.dataCardReserve
   });
-  setTimeout( async () => {
+  // setTimeout( async () => {
     console.log("dataPay.value.url: ", data.value.session.url);
     await navigateTo(data.value.session.url,{
     external: true
   })
-  }, 1500);
+  // }, 1500);
 }
 
 </script>
@@ -128,6 +133,7 @@ const handlePay = async ()=>{
   font-size: 0.9em;
   margin: 0.4em 0 0 0;
   font-weight: 600;
+  border: none;
 
 }
 

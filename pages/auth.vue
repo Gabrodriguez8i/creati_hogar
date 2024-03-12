@@ -130,6 +130,7 @@ onMounted(() => {
 });
 
 const supabase = useSupabaseClient();
+const router = useRouter()
 const dataAuth = reactive({
     name: "",
     email: "",
@@ -152,7 +153,7 @@ const login = async ()=>{
         email: dataAuth.email,
         password: dataAuth.password
     });
-    error ? alert("error en el login") : navigateTo('/');
+    error ? alert("error en el login") : router.back();
 }
 </script>
 
