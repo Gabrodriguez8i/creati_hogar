@@ -93,8 +93,9 @@ const handlePay = async ()=>{
 
 .property_container_info_right_card_calendary{
   width: 100%;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
 }
 
 

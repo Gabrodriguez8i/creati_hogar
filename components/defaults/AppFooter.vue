@@ -50,7 +50,7 @@ background:#000;
 padding:30px 0px;
 /* font-family: 'Play', sans-serif; */
 text-align:center;
-/* z-index: 20; */
+z-index:0;
 }
 
 .footer .row{
