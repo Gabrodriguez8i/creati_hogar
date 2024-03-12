@@ -498,6 +498,7 @@ const viewCalendary = ()=>{
 .property_container_info_leftBx_rooms_list_bx_img {
     height: min-content;
     width: 180px;
+    max-height: 180px;
     border-radius: 8px;
     margin-bottom: 15px;
 }
