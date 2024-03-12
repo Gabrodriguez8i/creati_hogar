@@ -569,7 +569,7 @@ const viewCalendary = ()=>{
   .property_container_info_leftBx_rooms_list{
       overflow-x: scroll ;
       padding-bottom: 25px;
-      max-height: 250px;
+      /* max-height: 250px; */
     }
 }
   @media (max-width: 650px){
