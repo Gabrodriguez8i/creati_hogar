@@ -9,7 +9,7 @@
                     <!-- <img  v-for="(image, index) in property.imagesSlider" class="item" ref="itemsCurrent" :class="{'active': itemActive == index}" :src="image" alt="imagen de propieda creati hogar"> -->
                 </div>
 
-                <div class="buttons" style="z-index: 10000">
+                <div class="buttons" style="z-index: 10">
                     <span @click="prev">
                         <ClientOnly>
                             <Icon class="i" name="ic:round-chevron-left" size="15px"  />

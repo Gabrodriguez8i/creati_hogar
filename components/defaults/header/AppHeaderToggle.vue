@@ -43,6 +43,13 @@
                 </ClientOnly>  
                 Salir
             </span>
+            <span v-if="user" @click="toggle = false"  class="main_container_header_subMenu_list_btn">
+                <ClientOnly>
+                <Icon name="mdi:account-circle-outline" size="24px" class="main_container_header_subMenu_list_btn_icon"  />
+                </ClientOnly>
+                <NuxtLink to="/profile">Perfil</NuxtLink>
+
+            </span>
             <span @click="toggle = false"  class="main_container_header_subMenu_list_btn">
                 <ClientOnly>
                 <Icon name="mdi:chat-processing-outline" size="24px" class="main_container_header_subMenu_list_btn_icon"  />

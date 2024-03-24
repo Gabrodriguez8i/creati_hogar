@@ -29,7 +29,7 @@
                 <div class="property_container_info_leftBx_infoMain">
                   <!-- head title min -->
                   <span class="property_container_info_leftBx_infoMain_subtitle">
-                    {{ service.address.state }}
+                    {{ service.address.state }},
                     {{ service.address.city }} 
                   </span>
 
@@ -100,7 +100,7 @@
 
                 <!-- section info Left INFO ROOMS -->
                 <div class="property_container_info_leftBx_rooms">
-                  <h2 class="property_container_info_leftBx_rooms_title">Where you'll sleep</h2>
+                  <h2 class="property_container_info_leftBx_rooms_title">Habitaciones</h2>
                   <ul class="property_container_info_leftBx_rooms_list">
 
                     <li v-for="(bedroom, indexBed) in service.imagesBedrooms" :key="indexBed" class="property_container_info_leftBx_rooms_list_bx">
@@ -113,6 +113,13 @@
                   </ul>
                 </div>
                 <hr />
+
+                <div class="property_container_info_leftBx_map">
+                  <h2 class="property_container_info_leftBx_map_title">Ubicación</h2>
+                  <div class="property_container_info_leftBx_map_bx" style="height: 400px;">
+                    <DefaultsMapApp/>
+                  </div>
+                </div>
 
               </div>
 
@@ -150,12 +157,12 @@ const route = useRoute();
 const supabase_service = useSupabaseClient<Service>();
 
 const { data: service, error, pending } = await useAsyncData("service", async () => {
-  const { data } = await supabase_service.from("services").select("*").eq("id", route.params.id);
-  if (data != null) return data[0];
+  const { data } = await supabase_service.from("services").select("*").eq("id", route.params.id).single();
+  if (data != null) return data;
 });
 
 // state view calendary:
-let calendaryStateForPhone = ref(false);
+let calendaryStateForPhone = ref<boolean>(false);
 const viewCalendary = ()=>{
   calendaryStateForPhone.value = !calendaryStateForPhone.value
 }
@@ -481,8 +488,16 @@ const viewCalendary = ()=>{
 }
 
 
+/* map start */
+.property_container_info_leftBx_map_title{
+  margin-bottom: 25px;
+}
+.property_container_info_leftBx_map_bx{
+  height: 400px;
+  padding: 0 1.5rem;
+}
 
-
+/* map end */
 
 /* right side of hero-info */
  .property_container_info_right{

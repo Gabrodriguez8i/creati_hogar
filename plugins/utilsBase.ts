@@ -8,7 +8,8 @@ export default defineNuxtPlugin((nuxtApp) => {
                 // order format
                 const options: Record<string, string> = {
                     DMY: 'dd/mm/yyyy',
-                    MDY: 'mm/dd/yyyy'
+                    MDY: 'mm/dd/yyyy',
+                    YMD: 'yyyy/mm/dd'
                 };
             
                 const formatDateOptions = (date: Date, format: string): string => {

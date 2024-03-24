@@ -40,11 +40,18 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig:{
+    // stripe
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    WEBHOOK_SECRET: process.env.WEBHOOK_SECRET,
     ENDPOINT_SECRET: process.env.ENDPOINT_SECRET,
     APP_URL: process.env.APP_URL,
     public:{
-      STRIPE_KEY: process.env.STRIPE_KEY
+      // MAP VARIABLES
+      MAPTILER_HREF: process.env.MAPTILER_HREF,
+      MAPTILER_SCRIPT: process.env.MAPTILER_SCRIPT,
+      MAPTILER_KEY: process.env.MAPTILER_KEY,
+      
+      // STRIPE_KEY: process.env.STRIPE_KEY
     }
   },
 

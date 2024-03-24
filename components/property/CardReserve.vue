@@ -10,13 +10,16 @@
 
   <!-- CALENDAR -->
   <div class="property_container_info_right_card_calendary">
+    <!-- {{ $util_formatDate(range.start, 'YMD') }} -->
       <ClientOnly>
         <VDatePicker width="100% !important" :color="selectedColor" v-model.range="range" :disabled-dates="disabledDates" is-dark="dark" borderless transparent />
       </ClientOnly>
   </div>
 
   <div class="property_container_info_right_card_buttons">
-    <button @click="handlePay()" class="property_container_info_right_card_Pay_reserveBtn">Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}</button>
+    <button @click="handlePay()" class="property_container_info_right_card_Pay_reserveBtn" :disabled="loading">
+      Reservar ${{ $util_calcularCostoReserva($util_formatDate(range.start, 'MDY'), $util_formatDate(range.end, 'MDY'), dataCardReserve.priceBase ) }}
+    </button>
   </div>
 
 </div>
@@ -42,27 +45,39 @@ const range = ref({
 });
 
 const selectedColor = ref('gray');
-const disabledDates = ref([
-  {
-    repeat: {
-      weekdays: [4, 5],
-    },
-  },
-]);
+const disabledDates = ref([{ start: new Date(2024, 2, 7), end: new Date(2024, 3, 7) }]);
 
+const loading = ref(false);
 
+// const property_for_pay = {
+//   price_data:{
+//     currency: "usd", // para indicar que se va a pagar en dolares
+//     product_data:{ // para especificar el producto
+//       name: "property1",
+//       images: ["https://I.imgur.com/EHyR2np.png"]
+//     },
+//     unit_amount:2000, // ejemplo de monto 1000 son 10$, 2000 son 20$
+//   },
+//   quantity: 1 // cantidad de productos que se estaria llevando
+// }
 // Methods ----------
 
 // Pagar servicio
 const handlePay = async ()=>{
-  console.log("auth: ", user)
+  loading.value = true;
+  // verificar que se encuentre auth
   if(!user.value){
     await navigateTo('/auth');
     return
   }
+  let body = {
+    id: props.dataCardReserve.dataService.id,
+    date_start:  $util_formatDate(range.value.start, 'YMD'),
+    date_end: $util_formatDate(range.value.end, 'YMD'),
+  };
   const {data,error,pending} = await useFetch('/api/stripe/stripe',{
     method: 'POST',
-    body: props.dataCardReserve
+    body: body
   });
   // setTimeout( async () => {
     console.log("dataPay.value.url: ", data.value.session.url);

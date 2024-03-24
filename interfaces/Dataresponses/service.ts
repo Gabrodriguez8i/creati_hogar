@@ -1,3 +1,4 @@
+// SUB Interfaces  ------------------------
 interface AddressService {
     city: string;
     state: string;
@@ -13,7 +14,8 @@ interface AmenitiesComunesServices {
     name: string;
     icon: string;
   }
-  
+
+// MAIN Interfaces  ------------------------
 export interface Service {
     id: number,
     name: string,
