@@ -53,10 +53,11 @@ export default defineEventHandler(async (event) => {
         })
 
         // creo la reservacion
-        // console.log("sessio: ", session);
+        console.log("session: ", session);
         const { error } = await supabase.from('reservations').insert([
             {
                 product_id: data.id,
+                checkout_session_id: session.id,
                 product_name: data.name,
                 client_id: client?.id,
                 client_email: client?.email,
